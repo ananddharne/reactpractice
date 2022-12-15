@@ -1,3 +1,33 @@
+
+/* important - nav will always be like this */
+nav ul {
+  margin: 0;
+  padding: 2px;
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+nav a:hover {
+  color: blue;
+}
+
+nav li:first-child {
+  /* important */
+  flex-basis: 100%; 
+  text-align: center;
+}
+nav a {
+  color: orangered;
+  text-decoration: none;
+  display: block;
+}
+
+/* nav end */
+
 * {
   box-sizing: border-box;
   color: #333;
@@ -170,13 +200,11 @@ header {
 }
 
 .carousel-smaller > img.active {
-  border-color: #333;
   opacity: 0.6;
 }
 
 .search-params label {
   display: block;
-  width: 60px;
 }
 
 .search-params input,
@@ -331,5 +359,19 @@ header {
   .carousel-smaller > img {
     width: 60px;
     height: 60px;
+  }
+}
+
+
+@media (min-width: 850px) {
+  nav {
+    /* large monitors distance between name and iterms needs to be sane */
+    /* centering */
+    margin: 0 auto; 
+  }
+  nav li:first-child {
+    flex-basis: auto;
+    text-align: left;
+    margin-right: auto;
   }
 }
